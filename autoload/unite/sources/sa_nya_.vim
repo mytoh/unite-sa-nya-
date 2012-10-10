@@ -12,14 +12,14 @@ let s:source = {
 
 let s:source = {
 \	"name" : "sa-nya-",
-\	"description" : "(」・×・)」さー！(／・×・)／にゃー！",
+\	"description" : "(」・×・)」ｻー！(／・×・)／ ﾆｬー！",
 \	"sa_nya__counter" : 0,
 \	"sa_nya__cache" : ""
 \}
 
 function! s:source.async_gather_candidates(args, context)
-	let u = "(」・×・)」".get(a:args, 0, "さー")."！"
-	let nya = "(／・×・)／".get(a:args, 1, "にゃー")."！\n"
+	let u = "(」・×・)」".get(a:args, 0, "ｻー")."！"
+	let nya = "(／・×・)／".get(a:args, 1, "ﾆｬー")."！\n"
 	let a:context.source.unite__cached_candidates = []
 	let self.sa_nya__cache .= (self.sa_nya__counter % 2 == 0 ? u : nya)
 	let self.sa_nya__counter += 1
