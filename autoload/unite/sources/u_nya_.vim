@@ -11,15 +11,15 @@ let s:source = {
 \}
 
 let s:source = {
-\	"name" : "u-nya-",
-\	"description" : "(」・ω・)」うー！(／・ω・)／にゃー！",
+\	"name" : "sa-nya-",
+\	"description" : "(」・×・)」さー！(／・×・)／にゃー！",
 \	"u_nya__counter" : 0,
 \	"u_nya__cache" : ""
 \}
 
 function! s:source.async_gather_candidates(args, context)
-	let u = "(」・ω・)」".get(a:args, 0, "うー")."！"
-	let nya = "(／・ω・)／".get(a:args, 1, "にゃー")."！\n"
+	let u = "(」・×・)」".get(a:args, 0, "うー")."！"
+	let nya = "(／・×・)／".get(a:args, 1, "にゃー")."！\n"
 	let a:context.source.unite__cached_candidates = []
 	let self.u_nya__cache .= (self.u_nya__counter % 2 == 0 ? u : nya)
 	let self.u_nya__counter += 1
@@ -29,3 +29,4 @@ endfunction
 
 
 
+" (・×・)
