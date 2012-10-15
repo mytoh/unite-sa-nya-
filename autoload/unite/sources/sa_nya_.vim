@@ -5,12 +5,6 @@ function! unite#sources#sa_nya_#define()
 endfunction
 
 let s:source = {
-\	"name" : "moo",
-\	"description" : "スーパー牛さんパワー",
-\	"moo__counter" : 0
-\}
-
-let s:source = {
 \	"name" : "sa-nya-",
 \	"description" : "(」・×・)」ｻｰ！(／・×・)／ ﾆｬｰ！",
 \	"sa_nya__counter" : 0,
@@ -18,10 +12,10 @@ let s:source = {
 \}
 
 function! s:source.async_gather_candidates(args, context)
-	let u = "(」・×・)」".get(a:args, 0, "ｻｰ")."！"
+	let sa = "(」・×・)」".get(a:args, 0, "ｻｰ")."！"
 	let nya = "(／・×・)／".get(a:args, 1, "ﾆｬｰ")."！\n"
 	let a:context.source.unite__cached_candidates = []
-	let self.sa_nya__cache .= (self.sa_nya__counter % 2 == 0 ? u : nya)
+	let self.sa_nya__cache .= (self.sa_nya__counter % 2 == 0 ? sa : nya)
 	let self.sa_nya__counter += 1
 
 	return map(split(copy(self.sa_nya__cache), '\n'), '{ "word" : v:val }')
